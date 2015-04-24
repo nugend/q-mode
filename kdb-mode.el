@@ -165,6 +165,10 @@
   (add-hook 'kdb-mode-hook 'smartparens-mode)
   (sp-pair "'" nil :actions :rem)
   (sp-pair "`" nil :actions :rem)
+  
+  (add-hook 'kdb-mode-hook (lambda ()
+    (set (make-local-variable 'comment-start) "//")
+    (set (make-local-variable 'comment-end) "")))
   )
 
 ;;;####autoload
